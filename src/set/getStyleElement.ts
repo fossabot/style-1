@@ -1,3 +1,5 @@
+import { IStyleGroups } from '../inteface';
+
 const styleGroups: IStyleGroups = {};
 
 export default function(

@@ -1,3 +1,4 @@
+import { IStyle, IStyleVariable } from '../inteface.js';
 /**
  *
  * @param {IStyle | IStyle[]} style

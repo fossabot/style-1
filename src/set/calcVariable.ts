@@ -1,3 +1,5 @@
+import { IStyleVariable } from '../inteface';
+
 // tslint:disable:no-eval
 export default function calcVariable(
     css: string | string[],
