@@ -1,3 +1,4 @@
+import { IStyle, IStyleVariable } from '../inteface';
 import calcVariable from './calcVariable';
 import setRule from './setRule';
 
