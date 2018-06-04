@@ -1,0 +1,63 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true,
+        "mocha": true
+    },
+    "extends": ["eslint:recommended", "plugin:node/recommended"],
+    "parser": "typescript-eslint-parser",
+    "parserOptions": {
+        "parser": "babel-eslint",
+        "ecmaVersion": 2015,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "plugins": ["node", "typescript"],
+    "rules": {
+        "node/no-deprecated-api": [
+            "warn",
+            {
+                "ignoreModuleItems": [],
+                "ignoreGlobalItems": []
+            }
+        ],
+        "node/no-unsupported-features": "off",
+        "indent": [
+            "warn",
+            4,
+            {
+                "MemberExpression": 1
+            }
+        ],
+        "linebreak-style": ["error", "windows"],
+        "quotes": [
+            "warn",
+            "single",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        "semi": ["error", "always"],
+        "no-console": "off",
+        "no-unused-vars": "warn",
+        "space-before-function-paren": ["error", "never"],
+        "operator-linebreak": "off",
+        "eol-last": "off",
+        "no-throw-literal": "off",
+        "prefer-const": "error",
+        "no-global-assign": [
+            "error",
+            {
+                "exceptions": ["Object"]
+            }
+        ]
+    },
+    "globals": {
+        "_": true
+    }
+}
