@@ -1,11 +1,36 @@
+os: linux
 language: node_js
 node_js:
 - '8'
 
-before_install:
-- npm install
-- npm run clean:travis
-- npm run build
+cache:
+  directories:
+  - node_modules
+  
+before_script:
+  - git lfs pull
 
-script:
-- npm test
+stages:
+  - Test
+  - Build
+
+jobs:
+  include:
+    # Unit Test
+    - stage:          Test
+      env:            ❤ = Lint
+      script:         
+        - yarn lint
+
+    - stage:          Test
+      env:            ❤ = Test
+      script:         
+        - yarn test
+
+    - stage:          Build
+      env:            ❤ = Build
+      script:         
+        - yarn build
+
+after_success: ./.travis/discord.sh success $WEBHOOK_URL
+after_failure: ./.travis/discord.sh failure $WEBHOOK_URL
