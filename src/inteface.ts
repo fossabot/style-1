@@ -4,6 +4,7 @@ export interface IStyle {
     rules: {
         [key: string]: string | string[];
     };
+    variables: IStyleVariable;
 }
 
 export interface IStyleGroups {

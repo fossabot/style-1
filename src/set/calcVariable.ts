@@ -12,5 +12,5 @@ export default function calcVariable(
     const replace = (_: string, attr: string) => vars[attr];
     const match = (_: string, $1: string) =>
         eval($1.replace(/\$(\w+)/g, replace));
-    return css.replace(reggex, match);
+    return css.replace(reggex, match).replace(/\s+/g, ' ');
 }
