@@ -1,4 +1,8 @@
-import getAttribute from './code/getAttribute';
 import initialize from './code/initialize';
+import { IStyle } from './inteface';
 
-export default { getAttribute, initialize };
+export { default as getAttribute } from './code/getAttribute';
+export { default as initialize } from './code/initialize';
+export default function(style: IStyle): void {
+    initialize({ style });
+}

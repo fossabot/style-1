@@ -1,7 +1,4 @@
-import getAttribute from './code/getAttribute';
-import initialize from './code/initialize';
-declare const _default: {
-    getAttribute: typeof getAttribute;
-    initialize: typeof initialize;
-};
-export default _default;
+import { IStyle } from './inteface';
+export { default as getAttribute } from './code/getAttribute';
+export { default as initialize } from './code/initialize';
+export default function (style: IStyle): void;
