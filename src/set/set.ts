@@ -6,7 +6,7 @@ import setEachStyle from './setEachStyle.js';
  * @param {IStyle | IStyle[]} style
  * @param {IStyleVariable} vars
  */
-export default function set(style: IStyle) {
+export default function set(style: IStyle): void {
     if (typeof style.variables !== 'object') {
         console.error({
             err: 'In set style function: vars is not an object',
