@@ -1,11 +1,15 @@
 import Vue from 'vue';
 import get from './get/get';
-import { IStyle } from './inteface';
-import set from './set/set';
-import { set as setVariable } from './variable/variable';
+import { IStyle, IStyleVariable } from './inteface';
+import initialize from './set/initialize';
+import { setVariables } from './variable/variable';
 
 export default {
-    get: get as (property: string, self: Vue, defaultValue: number) => number,
-    set: set as (style: IStyle) => void,
-    setVariable: setVariable as (key: string, value: string) => void,
+    getAttribute: get as (
+        property: string,
+        self: Vue,
+        defaultValue: number,
+    ) => number,
+    initialize: initialize as (style: IStyle) => void,
+    setVariables: setVariables as (variables: IStyleVariable) => void,
 };

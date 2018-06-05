@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import { IStyle } from './inteface';
+import { IStyle, IStyleVariable } from './inteface';
 declare const _default: {
-    get: (property: string, self: Vue, defaultValue: number) => number;
-    set: (style: IStyle) => void;
-    setVariable: (key: string, value: string) => void;
+    getAttribute: (property: string, self: Vue, defaultValue: number) => number;
+    initialize: (style: IStyle) => void;
+    setVariables: (variables: IStyleVariable) => void;
 };
 export default _default;
