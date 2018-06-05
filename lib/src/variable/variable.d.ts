@@ -1,3 +1,3 @@
 import { IStyleVariable } from '../inteface';
-export declare function set(key: string, value: string): void;
-export declare function calc(css: string | string[], inputVariables: IStyleVariable): string;
+export declare function setVariables(variable: IStyleVariable): void;
+export declare function evaluate(css: string | string[], inputVariables: IStyleVariable): string;

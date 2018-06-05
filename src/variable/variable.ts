@@ -1,15 +1,12 @@
 import { IStyleVariable } from '../inteface';
 const globalVariable: IStyleVariable = {};
 
-export function set(key: string, value: string): void {
-    globalVariable[key] = value;
+export function setVariables(variable: IStyleVariable): void {
+    Object.assign(globalVariable, variable);
 }
 
 // tslint:disable:no-eval
-export function calc(
-    css: string | string[],
-    inputVariables: IStyleVariable,
-) {
+export function evaluate(css: string | string[], inputVariables: IStyleVariable) {
     if (Array.isArray(css)) {
         css = css.join(';');
     }
