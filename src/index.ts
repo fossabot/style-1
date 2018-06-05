@@ -1,13 +1,8 @@
-import Vue from 'vue';
-import getAttribute from './code/getAttribute';
 import initialize from './code/initialize';
 import { IStyle } from './inteface';
 
-export default {
-    getAttribute: getAttribute as (
-        property: string,
-        self: Vue,
-        defaultValue: number,
-    ) => number,
-    initialize: initialize as (style: IStyle) => void,
-};
+export { default as getAttribute } from './code/getAttribute';
+export { default as initialize } from './code/initialize';
+export default function(style: IStyle): void {
+    initialize({ style });
+}

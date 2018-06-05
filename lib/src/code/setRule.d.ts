@@ -1,3 +1,2 @@
-export default function (selector: string, rules: {
-    [key: string]: string;
-}, group: string, overwrite: boolean): void;
+import { IRule } from './../inteface';
+export default function (selector: string, declaration: IRule, group: string, overwrite: boolean): void;

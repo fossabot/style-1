@@ -1,13 +1,12 @@
+import { IRule } from './../inteface';
 export default function(
     sheet: CSSStyleSheet,
     selector: string,
-    rules: { [key: string]: string },
+    rules: IRule,
     index: number = sheet.cssRules.length,
 ) {
     const declaration = Object.keys(rules)
-        .map((property, _) => {
-            return `${toKebab(property)}:${rules[property]};`;
-        })
+        .map((property, _) => `${toKebab(property)}:${rules[property]};`)
         .join('');
     sheet.insertRule(`${selector} { ${declaration} }`, index);
 }
