@@ -1,13 +1,18 @@
-export interface IStyle {
+import { IRule } from './inteface';
+export interface IConfig {
     group?: string;
     overwrite?: boolean;
-    rules: {
-        [key: string]: {
-            [key: string]: string;
-        };
-    };
+    style: IStyle;
 }
 
 export interface IStyleGroups {
     [key: string]: HTMLStyleElement;
+}
+
+export interface IStyle {
+    [key: string]: IRule;
+}
+
+export interface IRule {
+    [key: string]: string;
 }

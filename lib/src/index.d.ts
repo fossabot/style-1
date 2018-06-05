@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import { IStyle } from './inteface';
+import getAttribute from './code/getAttribute';
+import initialize from './code/initialize';
 declare const _default: {
-    getAttribute: (property: string, self: Vue, defaultValue: number) => number;
-    initialize: (style: IStyle) => void;
+    getAttribute: typeof getAttribute;
+    initialize: typeof initialize;
 };
 export default _default;

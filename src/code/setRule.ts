@@ -1,9 +1,10 @@
+import { IRule } from './../inteface';
 import getStyleSheet from './getStyleSheet';
 import insertRule from './insertRule';
 
 export default function(
     selector: string,
-    rules: { [key: string]: string },
+    declaration: IRule,
     group: string,
     overwrite: boolean,
 ) {
@@ -22,9 +23,9 @@ export default function(
                 }
             }
             if (ruleIndex === -1) {
-                insertRule(sheet, selector, rules);
+                insertRule(sheet, selector, declaration);
             } else if (overwrite) {
-                insertRule(sheet, selector, rules, ruleIndex);
+                insertRule(sheet, selector, declaration, ruleIndex);
             }
         }
     });

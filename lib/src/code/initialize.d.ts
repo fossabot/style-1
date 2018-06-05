@@ -1,2 +1,2 @@
-import { IStyle } from '../inteface.js';
-export default function (style: IStyle): void;
+import { IConfig } from '../inteface';
+export default function (style: IConfig): void;
