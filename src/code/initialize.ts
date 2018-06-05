@@ -1,19 +1,7 @@
 import { IStyle } from '../inteface.js';
 import setEachStyle from './setEachStyle.js';
 
-/**
- *
- * @param {IStyle | IStyle[]} style
- * @param {IStyleVariable} vars
- */
-export default function set(style: IStyle): void {
-    if (typeof style.variables !== 'object') {
-        console.error({
-            err: 'In set style function: vars is not an object',
-            style,
-        });
-        return;
-    }
+export default function(style: IStyle): void {
     if (typeof style !== 'object') {
         console.error({
             err:
@@ -22,5 +10,7 @@ export default function set(style: IStyle): void {
         });
         return;
     }
+    style.group = style.group || 'default';
+    style.overwrite = style.overwrite || false;
     setEachStyle(style);
 }

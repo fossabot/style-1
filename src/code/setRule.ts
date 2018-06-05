@@ -1,13 +1,13 @@
-import getStyleElement from './getStyleElement';
+import getStyleSheet from './getStyleSheet';
 import insertRule from './insertRule';
 
-export default function setRule(
+export default function(
     selector: string,
-    rules: string,
+    rules: { [key: string]: string },
     group: string,
     overwrite: boolean,
 ) {
-    getStyleElement(group, (sheet: CSSStyleSheet | null) => {
+    getStyleSheet(group, (sheet: CSSStyleSheet | null) => {
         if (sheet == null) {
             return;
         } else {
@@ -30,7 +30,7 @@ export default function setRule(
     });
 }
 function formatSelectorText(sheet: CSSStyleSheet, selector: string): string {
-    insertRule(sheet, selector, '{}', 0);
+    insertRule(sheet, selector, {}, 0);
     const firstRule = getStyleRule(sheet, 0);
     const selectorText = firstRule.selectorText;
     sheet.deleteRule(0);
