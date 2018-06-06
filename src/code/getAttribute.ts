@@ -1,31 +1,26 @@
 import Vue from 'vue';
 
-export default function get(
+export default function getAttribute(
     property: string,
     self: Vue,
-    defaultValue: number,
-): number {
-    let value: number = 0;
-    if (property === 'size') {
-        if (self.$el.getAttribute) {
-            value = Number(self.$el.getAttribute('size'));
-            if (value === 0) {
-                value = get('parentSize', self, defaultValue);
-            }
+    defaultValue: string | number,
+): string | number | null {
+    let value: string | null = null;
+    let closest: HTMLElement | null = self.$el;
+    do {
+        if (!closest || typeof closest.getAttribute !== 'function') {
+            break;
         }
-    } else if (property === 'parentSize') {
-        let closest: HTMLElement | null = self.$el;
-        do {
-            closest = closest.parentElement;
-            if (closest == null) {
-                break;
-            }
-            value = Number(closest.getAttribute('size'));
-        } while (value == null);
-    } else {
-        console.warn(
-            'property is undefined, value will be set to defaultValue',
-        );
+        value = closest.getAttribute(property);
+        closest = closest.parentElement;
+    } while (value == null);
+
+    if (value == null) {
+        return defaultValue;
     }
-    return value || defaultValue;
+    if (typeof defaultValue === 'number') {
+        return Number(value);
+    } else {
+        return value;
+    }
 }

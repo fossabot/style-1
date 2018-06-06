@@ -1,2 +1,2 @@
 import Vue from 'vue';
-export default function get(property: string, self: Vue, defaultValue: number): number;
+export default function getAttribute(property: string, self: Vue, defaultValue: string | number): string | number | null;
