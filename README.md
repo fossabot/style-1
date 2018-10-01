@@ -1,6 +1,7 @@
 # Style
 
 [![Travis Build](https://travis-ci.org/phamhongphuc/style.svg?branch=master)](https://travis-ci.org/phamhongphuc/style/builds 'Most recent build') [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/phamhongphuc/style.svg)](https://github.com/phamhongphuc/style/issues 'Average time to resolve an issue') [![Percentage of issues still open](http://isitmaintained.com/badge/open/phamhongphuc/style.svg)](https://github.com/phamhongphuc/style/issues 'Percentage of issues still open')
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fphamhongphuc%2Fstyle.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fphamhongphuc%2Fstyle?ref=badge_shield)
 
 > Vue.js component load style in runtime
 
@@ -37,3 +38,7 @@ npm install phamhongphuc/style
 ```
 
 😎 Happy Coding 😎
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fphamhongphuc%2Fstyle.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fphamhongphuc%2Fstyle?ref=badge_large)
